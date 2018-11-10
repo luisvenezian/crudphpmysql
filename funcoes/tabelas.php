@@ -44,6 +44,7 @@
  
     #Mostra uma tabela com o resultado da select automaticamente
     #Com opção de UPDATE E DELETE.
+    #Imagens seguem em diretório ../funcoes/img/ 
     function mostrarTabelaAlteravel($sql, $conexao){
     echo "<br>";
     if (!$tabela=mysqli_query($conexao,$sql))
@@ -83,7 +84,7 @@
     echo "</table>\n";
     echo "</div>\n";
     }
-    else { echo "<script>swal(' Tabela não possui registros :( ');</script>";}
+    else { echo "<script>swal(' Tabela não possui registros. ');</script>";}
     }   
 
     echo "
@@ -93,6 +94,6 @@
         //var div = document.getElementById('luis').innerHTML;
         confirm(div); // alerta 'seuid'
     } 
+    </script>";
 
     
-    </script>";

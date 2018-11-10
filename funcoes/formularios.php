@@ -6,6 +6,8 @@
     *                                                                                                                 
     */ 
 
+    /*
+     * Comentário teste, inserção git 10/11/2018, Luis. */
 
     function criaForm($pagina, $titulo){ # Var pagina indica o link de referência para o formulário.
         echo "<form method='POST' action = '".$pagina."' >\n";
