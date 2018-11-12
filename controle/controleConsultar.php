@@ -8,6 +8,8 @@
     include '../funcoes/formularios.php';
     include '../funcoes/tabelas.php';
     
+    echo $js; #Inicia tag com funções de JS a serem utilizadas na terla.
+    
     #Receber informações e inserir no banco de dados.
     #Requisições names: CPPROFESSOR, CPDISCIPLINA, QTD_HORAS, DTATRIBUICAO
     $CPPROFESSOR = ISSET($_REQUEST['CPPROFESSOR'])?$_REQUEST['CPPROFESSOR']:'0';

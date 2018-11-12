@@ -76,7 +76,7 @@
         foreach($linha as $colunas) 
             echo "<td id='luis'>$colunas</td>";
         
-        echo "<th scope='col' id='id1' onclick='teste(".$linha[0].")'><img border='0' src='../funcoes/img/ic_delete.png' width='35' height='35'></th>";
+        echo "<th scope='col' id='id1' onclick='ouveValor(".$linha[0].")'><img border='0' src='../funcoes/img/ic_delete.png' width='35' height='35'></th>";
         echo "<th scope='col' ><img border='0' src='../funcoes/img/ic_update.png' width='35' height='35'></th>";
         echo "</tr>\n";
     }
@@ -87,13 +87,5 @@
     else { echo "<script>swal(' Tabela não possui registros. ');</script>";}
     }   
 
-    echo "
-    <script>
-    
-    function teste(div) {
-        //var div = document.getElementById('luis').innerHTML;
-        confirm(div); // alerta 'seuid'
-    } 
-    </script>";
-
+   
     

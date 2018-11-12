@@ -31,7 +31,10 @@
 
 
   /* Variavel de redirecionamento para principal */
-  $redirect = "../tela/home.php"
+  $redirect = "../tela/home.php";
 
+
+  /* Váriavel irá guardar o caminho para incluir funções de JS no código em qualquer página. */
+  $js = "<script src='../funcoes/js.js'></script>\n";
 
 ?>                                                                                                                                     
