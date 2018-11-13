@@ -45,7 +45,7 @@
     #Mostra uma tabela com o resultado da select automaticamente
     #Com opção de UPDATE E DELETE.
     #Imagens seguem em diretório ../funcoes/img/ 
-    function mostrarTabelaAlteravel($sql, $conexao){
+    function mostrarTabelaAlteravel($sql, $conexao, $CPPROFESSOR, $CPDISCIPLINA,  $QTD_HORAS, $DTATRIBUICAO, $TIPO_ORDEM){
     echo "<br>";
     if (!$tabela=mysqli_query($conexao,$sql))
     echo "<script>swal('Erro ao criar conectar tabela!');</script>";
@@ -56,6 +56,7 @@
     $fields_num = mysqli_num_fields($tabela);
     
     echo "<div class='container'>\n";
+    echo "<div id ='tabela'>";
     echo "<table class ='table  table-striped table-bordered'><tr>\n";
     echo "<thead class='thead-light'>\n";
     echo "<tr>\n";
@@ -76,12 +77,13 @@
         foreach($linha as $colunas) 
             echo "<td id='luis'>$colunas</td>";
         
-        echo "<th scope='col' id='id1' onclick='ouveValor(".$linha[0].")'><img border='0' src='../funcoes/img/ic_delete.png' width='35' height='35'></th>";
+        echo "<th scope='col' id='id1' onclick='ouveValor(".$linha[0].",".$CPPROFESSOR.",".$CPDISCIPLINA.",  ".$QTD_HORAS.", ".$DTATRIBUICAO.",".$TIPO_ORDEM.")'><img border='0' src='../funcoes/img/ic_delete.png' width='35' height='35'></th>";
         echo "<th scope='col' ><img border='0' src='../funcoes/img/ic_update.png' width='35' height='35'></th>";
         echo "</tr>\n";
     }
     echo "</tbody>\n";
     echo "</table>\n";
+    echo "</div>"; #fecha div id='tabela', usada para retorno ajax.
     echo "</div>\n";
     }
     else { echo "<script>swal(' Tabela não possui registros. ');</script>";}

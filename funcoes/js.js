@@ -9,17 +9,22 @@
      */
     
     
-    function ouveValor(clic) {
+    function ouveValor(clic,CPPROFESSOR,CPDISCIPLINA,QTD_HORAS,DTATRIBUICAO,TIPO_ORDEM) {
     //var div = document.getElementById('luis').innerHTML;
     var excluir = confirm('Deseja realmente excluir este registro? Código:'+ clic); // Alerta de confirme.
     var param = clic;
-        
+
     
     if (excluir){
        // location.href='../controle/controleExcluir.php?cp_professor='+clic;
       
     var atribuicao = {
         "cpatribuicao" : param,
+        "cpprofessor" : CPPROFESSOR,
+        "cpdisciplina": CPDISCIPLINA,
+        "qtd_horas" : QTD_HORAS,
+        "dtatribuicao" :DTATRIBUICAO,
+        "tipo_ordem" : TIPO_ORDEM
     };
 
 
@@ -27,12 +32,9 @@
         data:  atribuicao, /*Informação que será enviada pelo AJAX */
         url:   '../controle/controleExcluir.php', /*Arquivo que receberá a requisição */
         type:  'post', //Método
-        beforeSend: function () {
-                $("#resultado").html("Procesando, espere por favor...");
-                alert('NOK');
-        },
+
         success:  function (response) { /*Retorno usado na controle que processa a exclusão do dado*/
-                $("#resultado").html(response);
+                $("#tabela").html(response);
                 alert('OK');
         }
 
