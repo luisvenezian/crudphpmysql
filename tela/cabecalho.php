@@ -16,7 +16,7 @@
     <title>ILP-PHP-ESSENCIAL</title>
     
     <!--JQUERY -->
-    <script type='text/javascript' src='/js/jquery.js'></script>
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
     
     <!-- CDN PARA SWEET ALERT -->
     <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script> 

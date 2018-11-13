@@ -32,7 +32,8 @@
     AND ( HorasAula = '".$QTD_HORAS."' OR '".$QTD_HORAS."' = 0 ) 
     ORDER BY ".$TIPO_ORDEM." DESC";
     #echo "<h6>".$SQL."</h6>";
+    
     #Função que exibe tabela de acordo com instrução $SQL desejada na tela.
-    mostrarTabelaAlteravel($SQL,conectaBD());
+    mostrarTabelaAlteravel($SQL,conectaBD(), $CPPROFESSOR, $CPDISCIPLINA,  $QTD_HORAS, $DTATRIBUICAO, $TIPO_ORDEM);
     
 
