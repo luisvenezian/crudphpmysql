@@ -9,7 +9,7 @@
     include '../funcoes/tabelas.php';
     
     echo $js; #Inicia tag com funções de JS a serem utilizadas na terla.
-    
+
     #Receber informações e inserir no banco de dados.
     #Requisições names: CPPROFESSOR, CPDISCIPLINA, QTD_HORAS, DTATRIBUICAO
     $CPPROFESSOR = ISSET($_REQUEST['CPPROFESSOR'])?$_REQUEST['CPPROFESSOR']:'0';
@@ -23,7 +23,7 @@
 
 
     #Este comando futuramente deve ser implementado em uma procedure.
-    $SQL = "SELECT DISTINCT cpProfessor as Codigo, Nome, Disciplina, HorasAula, 
+    $SQL = "SELECT DISTINCT cpAtribuicao as 'Codigo Atribuição', Nome, Disciplina, HorasAula, 
     DATE_FORMAT(STR_TO_DATE(Atribuicao,'%Y-%m-%d'),'%d/%m/%Y') As Atribuicao,
     DATE_FORMAT(STR_TO_DATE(Cadastro,'%Y-%m-%d'),'%d/%m/%Y') As Cadastro
     FROM PROGRAMACAO WHERE ( cpprofessor =".$CPPROFESSOR." OR ".$CPPROFESSOR."  = 0 ) 

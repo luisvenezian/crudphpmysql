@@ -95,6 +95,7 @@
         criarControleForm("Consultar","Limpar");
         terminaForm();
         break;
+
         case 'alterar':
         
 

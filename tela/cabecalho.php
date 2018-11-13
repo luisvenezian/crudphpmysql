@@ -15,6 +15,8 @@
     <!-- Exercício ILP -- Web Site em PHP deve funcionar como um CRUD.-->
     <title>ILP-PHP-ESSENCIAL</title>
     
+    <!--JQUERY -->
+    <script type='text/javascript' src='/js/jquery.js'></script>
     
     <!-- CDN PARA SWEET ALERT -->
     <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script> 
