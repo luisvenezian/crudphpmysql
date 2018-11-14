@@ -22,9 +22,15 @@
         "cpatribuicao" : param,
         "cpprofessor" : CPPROFESSOR,
         "cpdisciplina": CPDISCIPLINA,
+<<<<<<< HEAD
         "qtd_horas" :   QTD_HORAS,
         "dtatribuicao" :DTATRIBUICAO,
         "tipo_ordem" : 'cpprofessor'
+=======
+        "qtd_horas" : QTD_HORAS,
+        "dtatribuicao" :DTATRIBUICAO,
+        "tipo_ordem" : TIPO_ORDEM
+>>>>>>> 8adce357759d39be3ff11e8f344db0483e5917af
     };
     $.ajax({
         data:  atribuicao, /*Informação que será enviada pelo AJAX */
@@ -33,6 +39,10 @@
 
         success:  function (response) { /*Retorno usado na controle que processa a exclusão do dado*/
                 $("#tabela").html(response);
+<<<<<<< HEAD
+=======
+                alert('OK');
+>>>>>>> 8adce357759d39be3ff11e8f344db0483e5917af
         }
 
         });
