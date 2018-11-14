@@ -77,11 +77,7 @@
         foreach($linha as $colunas) 
             echo "<td id='luis'>$colunas</td>";
         
-<<<<<<< HEAD
         echo "<th scope='col' id='id1' onclick='ouveValor(".$linha[0].",".$CPPROFESSOR.",".$CPDISCIPLINA.",".$QTD_HORAS.", ".$DTATRIBUICAO.")'><img border='0' src='../funcoes/img/ic_delete.png' width='35' height='35'></th>";
-=======
-        echo "<th scope='col' id='id1' onclick='ouveValor(".$linha[0].",".$CPPROFESSOR.",".$CPDISCIPLINA.",  ".$QTD_HORAS.", ".$DTATRIBUICAO.",".$TIPO_ORDEM.")'><img border='0' src='../funcoes/img/ic_delete.png' width='35' height='35'></th>";
->>>>>>> 8adce357759d39be3ff11e8f344db0483e5917af
         echo "<th scope='col' ><img border='0' src='../funcoes/img/ic_update.png' width='35' height='35'></th>";
         echo "</tr>\n";
     }
