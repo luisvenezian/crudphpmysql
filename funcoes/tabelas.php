@@ -4,7 +4,7 @@
     # para o desenvolvimento de tabelas no sistema.
     # Luis. 04/11/2018.
     
-    #Mostra uma tabela com o resultado da select automaticamente
+    # Mostra uma tabela com o resultado da select automaticamente
     function mostrarTabela($sql, $conexao){
     if (!$tabela=mysqli_query($conexao,$sql))
     echo "<script>swal('Erro ao criar conectar tabela!');</script>";

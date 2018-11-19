@@ -38,7 +38,7 @@
 	p.txNomeProfessor as Nome,
     d.txNome as Disciplina,
     a.QThorasatribuidas as HorasAula,
-    DATE_FORMAT(STR_TO_DATE(a.dtAtribuicao ,'%Y-%m-%d'),'%d/%m/%Y') As Atribuicao,
+    DATE_FORMAT(STR_TO_DATE(a.dtAtribuicao ,'%Y-%m-%d'),'%d/%m/%Y') As 'Atribuição',
     DATE_FORMAT(STR_TO_DATE(a.dtcadatribuicao,'%Y-%m-%d'),'%d/%m/%Y') As Cadastro
     FROM atribuicoes A 
 		INNER JOIN professores p on p.cpprofessor = a.ceprofessor
