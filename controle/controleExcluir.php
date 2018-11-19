@@ -26,6 +26,7 @@
     $SQL = "DELETE FROM atribuicoes WHERE cpatribuicao = '".$cpatribuicao."'"; #Código PK.
 
     if (mysqli_query(conectaBD(), $SQL)) {
+    /*
     $SQL = "SELECT DISTINCT cpAtribuicao as 'Codigo Atribuição', Nome, Disciplina, HorasAula, 
     DATE_FORMAT(STR_TO_DATE(Atribuicao,'%Y-%m-%d'),'%d/%m/%Y') As Atribuicao,
     DATE_FORMAT(STR_TO_DATE(Cadastro,'%Y-%m-%d'),'%d/%m/%Y') As Cadastro
@@ -33,8 +34,25 @@
     AND ( cpdisciplina=".$CPDISCIPLINA." OR ".$CPDISCIPLINA." = 0 )
     AND ( Atribuicao = '".$DTATRIBUICAO."' OR '".$DTATRIBUICAO."' = 0 ) 
     AND ( HorasAula = '".$QTD_HORAS."' OR '".$QTD_HORAS."' = 0 ) 
+    ORDER BY ".$TIPO_ORDEM." DESC";*/
+    
+    
+    $SQL = "SELECT DISTINCT 
+	a.cpatribuicao as 'Codigo Atribuição',
+	p.txNomeProfessor as Nome,
+    d.txNome as Disciplina,
+    a.QThorasatribuidas as HorasAula,
+    DATE_FORMAT(STR_TO_DATE(a.dtAtribuicao ,'%Y-%m-%d'),'%d/%m/%Y') As Atribuicao,
+    DATE_FORMAT(STR_TO_DATE(a.dtcadatribuicao,'%Y-%m-%d'),'%d/%m/%Y') As Cadastro
+    FROM atribuicoes A 
+		INNER JOIN professores p on p.cpprofessor = a.ceprofessor
+        INNER JOIN disciplinas d on d.cpdisciplina = a.cedisciplina
+    WHERE
+        ( cpprofessor =".$CPPROFESSOR." OR ".$CPPROFESSOR."  = 0 ) 
+    AND ( cpdisciplina=".$CPDISCIPLINA." OR ".$CPDISCIPLINA." = 0 )
+    AND ( a.dtAtribuicao  = '".$DTATRIBUICAO."' OR '".$DTATRIBUICAO."' = 0 ) 
+    AND ( a.QThorasatribuidas = '".$QTD_HORAS."' OR '".$QTD_HORAS."' = 0 ) 
     ORDER BY ".$TIPO_ORDEM." DESC";
-
     
     echo "<script type='text/javascript' >swal('Deletado com sucesso!', '', 'success');</script>"; 
     sleep(1);

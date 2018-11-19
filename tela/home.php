@@ -62,7 +62,10 @@
         
         criarControleForm("Enviar","Limpar");
         terminaForm();
-        break;
+        break; #Fim da sessão de incluir.
+
+
+
 
         case 'consultar':
         criaForm("../controle/controleConsultar.php","Fazer uma consulta.:");
@@ -87,9 +90,9 @@
         criaSelect("ORDENAÇÃO","TIPO_ORDEM");
           criaOption("Professores","cpprofessor");
           criaOption("Disciplinas","cpdisciplina");
-          criaOption("Qtd. Horas","HorasAula");
-          criaOption("Data Atribuida","Atribuicao");
-          criaOption("Data Cadastro","Cadastro");
+          criaOption("Qtd. Horas","QThorasatribuidas");
+          criaOption("Data Atribuida","dtAtribuicao");
+          criaOption("Data Cadastro","dtcadatribuicao");
         terminaSelect(); #Função fecha tags de select.
         
         criarControleForm("Consultar","Limpar");
