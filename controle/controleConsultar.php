@@ -43,8 +43,7 @@
     FROM atribuicoes A 
 		INNER JOIN professores p on p.cpprofessor = a.ceprofessor
         INNER JOIN disciplinas d on d.cpdisciplina = a.cedisciplina
-    WHERE
-        ( cpprofessor =".$CPPROFESSOR." OR ".$CPPROFESSOR."  = 0 ) 
+    WHERE ( cpprofessor =".$CPPROFESSOR." OR ".$CPPROFESSOR."  = 0 ) 
     AND ( cpdisciplina=".$CPDISCIPLINA." OR ".$CPDISCIPLINA." = 0 )
     AND ( a.dtAtribuicao  = '".$DTATRIBUICAO."' OR '".$DTATRIBUICAO."' = 0 ) 
     AND ( a.QThorasatribuidas = '".$QTD_HORAS."' OR '".$QTD_HORAS."' = 0 ) 

@@ -15,7 +15,8 @@
 
 
 
-    # * * * Foi realizada uma manutenção na estrutura da tabela  atribuicoes
+    # * * * Foi realizada uma manutenção na estrutura da tabela  atribuicoes  
+    ###########################################################NOTA: DESFEITO 19/11/2018 SOLICT. PROF. 
     # Para que a mesma pudesse registrar informções de PK com auto_increment. 
     # TRUNCATE TABLE atribuicoes;
     # ALTER TABLE atribuicoes MODIFY COLUMN cpatribuicao INT NOT NULL PRIMARY KEY AUTO_INCREMENT ;
@@ -25,9 +26,14 @@
     # Luis. 4/11/2018. 
 
     #Atribui comando SQL de inserção de dados na tabela a variável.
-    
-    $SQL = "INSERT INTO atribuicoes (ceprofessor, cedisciplina, qthorasatribuidas, dtatribuicao, dtcadatribuicao)
-            VALUES ('".$CPPROFESSOR."','".$CPDISCIPLINA."','".$QTD_HORAS."','".$DTATRIBUICAO."',CAST(NOW() AS DATE))"; 
+
+
+
+    $MAX_PK = mysqli_query(conectaBD(),"SELECT MAX (cpatribuicao) FROM atribuicoes"); #Comando atribuido ao desfazer auto incremento na tabela de atribuições.
+
+
+    $SQL = "INSERT INTO atribuicoes (cpatribuicao, ceprofessor, cedisciplina, qthorasatribuidas, dtatribuicao, dtcadatribuicao)
+            VALUES ('".$MAX_PK."','".$CPPROFESSOR."','".$CPDISCIPLINA."','".$QTD_HORAS."','".$DTATRIBUICAO."',CAST(NOW() AS DATE))"; 
 
     #Se a inserção ocorrer corretamente, mostrar dados.
     if (mysqli_query(conectaBD(), $SQL)) {
