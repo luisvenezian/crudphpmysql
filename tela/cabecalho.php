@@ -12,7 +12,7 @@
     <!DOCTYPE html>
     <head>
     <meta charset='UTF-8'>
-    <!-- Exercício ILP -- Web Site em PHP deve funcionar como um CRUD.-->
+    <!-- Sistema Crud para Administração de Empresa. -->
     <title>ILP-PHP-ESSENCIAL</title>
     
     <!--JQUERY -->
@@ -33,7 +33,7 @@
     <!--Início da NAVBAR -->
     <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
     <div class='container'><!--Abre container (Garante alinhamento da navBar)-->
-        <a class='navbar-brand h1 mb-0' href='../tela/home.php'>ILP 0210481713023</a>
+        <a class='navbar-brand h1 mb-0' href='../tela/home.php'>".$nome_do_sistema."</a>
         <div class='collapse navbar-collapse' id='navBarSite'>
             <ul class='navbar-nav'>
                 <li class='nav-item'><a class='nav-link' href=".$link_item1.">".$item1."</a></li>

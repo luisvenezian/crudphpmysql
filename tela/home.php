@@ -1,6 +1,6 @@
 <?php 
   /* -------------------------------------------------------------------------------
-   * Inclusão das funções e recursos necessários.:
+   *   Inclusão das funções e recursos necessários.:
    * -------------------------------------------------------------------------------
    * * Acesso ao banco de dados.
    * * Acesso a váriaveis de controle do ambiente.
@@ -33,6 +33,33 @@
              <h4>Autor: " .$autor_name. " </h4></div>";
         break;
     
+        case 'novo':
+        criaform("../controle/controleNovoCadastro.php","Cadastro de Pessoa:");
+        /* Aqui sera realizado um cadastro, seja de cliente, ou funcionário o procedimento
+        será o mesmo 
+        * 1- Tabela de Referência: [loja].[dbo].[tb_Cadastros]
+        * 2- 'cad_' é usado como prefixo para todos names que serão recebidos, seguidos
+        dos seus respectivos nomes de colunas no banco de dados.
+        */
+        criaInputText("Nome: ","cad_nome"); 
+        criaInputText("Sobrenome: ","cad_sobrenome");
+        criaInputCPF("CPF: ","cad_cpf");
+        criaInputDate("Data de Nascimento: ", "cad_dt_nascimento");
+        
+        #Criando combo para estados
+        $SQL = "SELECT nome, uf FROM [dbo].[tb_estados]";
+        criaCombo($SQL, 'uf', 'nome','Estado: ','cad_uf');
+
+
+
+        break;
+
+
+
+
+
+
+
 
 
         case 'incluir':

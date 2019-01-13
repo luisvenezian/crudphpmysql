@@ -1,13 +1,14 @@
 <?php
+    
+
    /*                                                                                           
     * Luis Felipe A. Venezian, 22/10/2018                                    
     * Funções servirão para criação de formulário, o intuito é
     * facilitar a manutenção do mesmo, criando um padrão de desenvolvimento.    
     *                                                                                                                 
     */ 
+    echo $js; #Inicia tag com funções de JS a serem utilizadas na tela.
 
-    /*
-     * Comentário teste, inserção git 10/11/2018, Luis. */
 
     function criaForm($pagina, $titulo){ # Var pagina indica o link de referência para o formulário.
         echo "<form method='POST' action = '".$pagina."' >\n";
@@ -35,16 +36,27 @@
          * $descricao: Nome indicado a frente do combo.
          * $name: Name que ira guardar o value do option escolhido.
          */ 
+        
+        try {
+            $Conexao = Conexao::getConnection();
+            $query = $Conexao->query($instrucao);
+            $resultado = $query->fetchALL();
+        }
+        catch (Exception $e){
+            echo $e->getMessage();
+            exit;
+        }
+        
         echo "<tr><td><strong>".$descricao.": </strong></td><td><select class='form-control' name='".$name."'>\n";
 
-        while ($i=MYSQLI_FETCH_ARRAY($instrucao)){
+        while ($i=MYSQLI_FETCH_ARRAY($resultado)){
             echo "<option value = '".$i[$value]."'>".$i[$dominio]."</option>\n";
         }
 
         echo "</select></td></tr>\n";
     }
 
-    function criaInputText($descricao, $name, $placeHolder){
+    function criaInputText($descricao, $name, $placeHolder = ""){
         #O place holder é opcional.
         echo "<tr><td><strong>".$descricao."</strong></td><td><input type ='text' class='form-control' placeholder='".$placeHolder."' name = '".$name."' required></td></tr>";
 
@@ -108,6 +120,13 @@
     }
     function terminaSelect(){
         echo "</select></td></tr>\n";
+    }
+
+    function criaInputCPF($descricao, $name, $placeHolder = ""){
+        #O place holder é opcional.
+        echo "<tr><td><strong>".$descricao."</strong></td><td><input type ='text' class='form-control' 
+        placeholder='".$placeHolder."' name = '".$name."' maxlength='14' onkeydown='javascript: fMasc( this, mCPF )' required></td></tr>";
+
     }
 
 

@@ -8,7 +8,7 @@
     include '../funcoes/formularios.php';
     include '../funcoes/tabelas.php';
     
-    echo $js; #Inicia tag com funções de JS a serem utilizadas na terla.
+    echo $js; #Inicia tag com funções de JS a serem utilizadas na tela.
 
     #Receber informações e inserir no banco de dados.
     #Requisições names: CPPROFESSOR, CPDISCIPLINA, QTD_HORAS, DTATRIBUICAO

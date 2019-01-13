@@ -9,12 +9,17 @@
   $texto = "Este é o sistema de gerenciamento de Atribuições. Use o menu acima para escolher uma opção."; #Mensagem no Index
   $autor_name = "Luis Felipe A. Venezian 4º ADS Noturno."; #Nome do desenvolvedor do Sistema. Utilizado no Index.                                                                                                                                                                                          
 
+/* System Name
+ * Varivavel recebe o nome do sistema que irá aparecer na página inicial.
+ */
+  $nome_do_sistema = "AdminS";
+
 
 
 /* Nome dos Menus da NAV-BAR (Cabeçalho)
  * Do 1 ao 5, Ordenado da esquerda para direita. 
  * */
-  $item1 = "Incluir";  
+  $item1 = "Novo";  
   $item2 = "Consultar";
   $item3 = "Alterar";
   $item4 = "Excluir";
@@ -23,7 +28,7 @@
 /* Links para os respectivos itens. Se trata do link de ação quando
  * houver click em alguma opção.
  */
-  $link_item1 = "../tela/home.php?opcao=incluir";
+  $link_item1 = "../tela/home.php?opcao=novo";
   $link_item2 = "../tela/home.php?opcao=consultar";
   $link_item3 = "../tela/home.php?opcao=alterar";
   $link_item4 = "../tela/home.php?opcao=excluir";
