@@ -13,8 +13,12 @@
     function criaForm($pagina, $titulo){ # Var pagina indica o link de referência para o formulário.
         echo "<form method='POST' action = '".$pagina."' >\n";
         echo "<div class ='container'>\n"; #Classe container alinha informações (Bootstrap)
-        echo "<h1>".$titulo."</h1>\n";
-        echo "<table class='table' align='center'>\n"; #Classe Table é referente ao uso do Bootstrap estilizando o conteúdo.
+        echo "<div class= 'row'>
+                <div class=col-lg>
+                   <h4> ".$titulo." </h4>
+                </div>
+              </div>\n";
+        #echo "<table class='table' align='center'>\n"; #Classe Table é referente ao uso do Bootstrap estilizando o conteúdo.
     }
 
     function terminaForm(){  
@@ -27,6 +31,12 @@
         echo "<tr><td>'".$texto."'</td><td><input type='submit' value ='".$texto."'></td></tr>\n"; 
     }
 
+    function BeginLine(){
+        echo "<tr>\n";
+    }
+    function EndLine(){
+        echo "</tr>\n";
+    }
 
     function criaCombo($instrucao, $value, $dominio, $descricao, $name){
         /* Nesta função para criar combo as váriaveis se comportam da seguinte maneira:
@@ -46,26 +56,31 @@
             echo $e->getMessage();
             exit;
         }
+        echo "<td><strong>".$descricao.": </strong></td><td><select class='form-control' name='".$name."'>\n";
         
-        echo "<tr><td><strong>".$descricao.": </strong></td><td><select class='form-control' name='".$name."'>\n";
-
-        while ($i=MYSQLI_FETCH_ARRAY($resultado)){
-            echo "<option value = '".$i[$value]."'>".$i[$dominio]."</option>\n";
+        foreach($resultado as $resultado){
+            echo "<option value = '".$resultado[$value]."'>".$resultado[$dominio]."</option>\n";
         }
 
-        echo "</select></td></tr>\n";
+        echo "</select></td>\n";
     }
+
+
 
     function criaInputText($descricao, $name, $placeHolder = ""){
         #O place holder é opcional.
-        echo "<tr><td><strong>".$descricao."</strong></td><td><input type ='text' class='form-control' placeholder='".$placeHolder."' name = '".$name."' required></td></tr>";
-
+        echo "<div class='row'>\n";
+        echo "<div class='col-lg'>\n";
+        echo "<strong>".$descricao."</strong></td><td><input type ='text' class='form-control' placeholder='".$placeHolder."' name = '".$name."' required>\n";
+        echo "</div></div>\n";
     }
 
     function criaInputDate($descricao, $name){
         #O place holder é opcional.
-        echo "<tr><td><strong>".$descricao."</strong></td><td><input type ='date' class='form-control' name = '".$name."' required></td></tr>";
-
+        echo "<div class='row'>\n";
+            echo "<div class='col-lg'>\n";
+            echo "<strong>".$descricao."</strong><input type ='date' class='form-control' name = '".$name."' required>";
+        echo "</div></div>\n";
     }
 
     #Funções de botão para inserção separados. Cada um em um TR.

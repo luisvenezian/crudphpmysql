@@ -28,15 +28,15 @@
 /* Links para os respectivos itens. Se trata do link de ação quando
  * houver click em alguma opção.
  */
-  $link_item1 = "../tela/home.php?opcao=novo";
-  $link_item2 = "../tela/home.php?opcao=consultar";
-  $link_item3 = "../tela/home.php?opcao=alterar";
-  $link_item4 = "../tela/home.php?opcao=excluir";
-  $link_item5 = "../tela/home.php?opcao=listar";
+  $link_item1 = "../tela/index.php?opcao=novo";
+  $link_item2 = "../tela/index.php?opcao=consultar";
+  $link_item3 = "../tela/index.php?opcao=alterar";
+  $link_item4 = "../tela/index.php?opcao=excluir";
+  $link_item5 = "../tela/index.php?opcao=listar";
 
 
   /* Variavel de redirecionamento para principal */
-  $redirect = "../tela/home.php";
+  $redirect = "../tela/index.php";
 
 
   /* Váriavel irá guardar o caminho para incluir funções de JS no código em qualquer página. */
