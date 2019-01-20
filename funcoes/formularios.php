@@ -31,12 +31,6 @@
         echo "<tr><td>'".$texto."'</td><td><input type='submit' value ='".$texto."'></td></tr>\n"; 
     }
 
-    function BeginLine(){
-        echo "<tr>\n";
-    }
-    function EndLine(){
-        echo "</tr>\n";
-    }
 
     function criaCombo($instrucao, $value, $dominio, $descricao, $name){
         /* Nesta função para criar combo as váriaveis se comportam da seguinte maneira:

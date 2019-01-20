@@ -32,10 +32,11 @@
 
     echo
     "<nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
-    <div class='container'><!--Abre container (Garante alinhamento da navBar)-->
+     <div class='container'>
         <a class='navbar-brand h1 mb-0' href='../tela/index.php'>
         <img src='https://img.icons8.com/color/48/000000/mind-map.png' width='30' height='30' class='d-inline-block align-top' alt=''>
         ".$nome_do_sistema."</a>
+
         <div class='collapse navbar-collapse' id='navBarSite'>
         
             <ul class='navbar-nav'>
